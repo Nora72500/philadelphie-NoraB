@@ -5,8 +5,10 @@
     list-style:none;
 }
 
-;navbar {
+.navbar {
     position: absolute;
-    margin: 30px;
-
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
