@@ -9,8 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: blueviolet;
-    position: relative;   
+    position: relative;
+    border-radius: 15%;   
 }
 
 img{
