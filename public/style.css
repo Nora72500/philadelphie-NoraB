@@ -10,7 +10,17 @@ nav{
 }
 
 .card{
-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: blueviolet;
+
+    border-radius: 50%;
+    position: relative;
+    flex-wrap: wrap;
+    width: 1200px;
+    transform-style: preserve-3d;
+    
 }
 
 .img{
