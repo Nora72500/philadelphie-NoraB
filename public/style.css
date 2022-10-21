@@ -15,10 +15,11 @@
     position: absolute;
     
 }
-.img{
-    border-radius: 50%;
+img {
+    border-radius: 100px;
+  
 }
-.card{
-    border-radius: 50%;
-}
+
+    
+    
 
