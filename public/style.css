@@ -1,20 +1,24 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     
 }
-
-
-.card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 15%;   
+.slider{
+    height: 50vh;
+    position: relative
 }
-
-img{
+.slider img{
+    object-fit: cover;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    
+}
+.img{
     border-radius: 50%;
-    transform-style: preserve-3d;
-    flex-wrap: wrap;
 }
+.card{
+    border-radius: 50%;
+}
+
