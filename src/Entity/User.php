@@ -58,7 +58,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $Nom = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $Prenom = null;
+    private ?string $Contact = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $contacts = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $non = null;
+
+  
 
     public function __construct()
     {
@@ -224,6 +232,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNom(string $Nom): self
     {
         $this->Nom = $Nom;
+
+        return $this;
+    }
+
+    public function getContact(): ?string
+    {
+        return $this->Contact;
+    }
+
+    public function setContact(string $Contact): self
+    {
+        $this->Contact = $Contact;
+
+        return $this;
+    }
+
+    public function getContacts(): ?string
+    {
+        return $this->contacts;
+    }
+
+    public function setContacts(string $contacts): self
+    {
+        $this->contacts = $contacts;
+
+        return $this;
+    }
+
+    public function getNon(): ?string
+    {
+        return $this->non;
+    }
+
+    public function setNon(string $non): self
+    {
+        $this->non = $non;
 
         return $this;
     }
