@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Conctacts;
+use App\Entity\Contact;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Conctacts>
+ * @extends ServiceEntityRepository<Contact>
  *
- * @method Conctacts|null find($id, $lockMode = null, $lockVersion = null)
- * @method Conctacts|null findOneBy(array $criteria, array $orderBy = null)
- * @method Conctacts[]    findAll()
- * @method Conctacts[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Contact|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Contact|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Contact[]    findAll()
+ * @method Contact[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ConctactsRepository extends ServiceEntityRepository
+class ContactRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Conctacts::class);
+        parent::__construct($registry, Contact::class);
     }
 
-    public function save(Conctacts $entity, bool $flush = false): void
+    public function save(Contact $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class ConctactsRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Conctacts $entity, bool $flush = false): void
+    public function remove(Contact $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class ConctactsRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Conctacts[] Returns an array of Conctacts objects
+//     * @return Contact[] Returns an array of Contact objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class ConctactsRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Conctacts
+//    public function findOneBySomeField($value): ?Contact
 //    {
 //        return $this->createQueryBuilder('c')
 //            ->andWhere('c.exampleField = :val')

@@ -2,12 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\MembresRepository;
-use Doctrine\DBAL\Types\Types;
+use App\Repository\ContactRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: MembresRepository::class)]
-class Membres
+#[ORM\Entity(repositoryClass: ContactRepository::class)]
+class Contact
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -23,8 +22,8 @@ class Membres
     #[ORM\Column(length: 255)]
     private ?string $mail = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: '0')]
-    private ?string $telephone = null;
+    #[ORM\ManyToOne(inversedBy: 'property')]
+    private ?User $User = null;
 
     public function getId(): ?int
     {
@@ -67,14 +66,14 @@ class Membres
         return $this;
     }
 
-    public function getTelephone(): ?string
+    public function getUser(): ?User
     {
-        return $this->telephone;
+        return $this->User;
     }
 
-    public function setTelephone(string $telephone): self
+    public function setUser(?User $User): self
     {
-        $this->telephone = $telephone;
+        $this->User = $User;
 
         return $this;
     }

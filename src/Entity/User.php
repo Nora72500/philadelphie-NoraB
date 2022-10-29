@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -66,12 +68,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $non = null;
 
+    #[ORM\OneToMany(mappedBy: 'User', targetEntity: Contact::class)]
+    private Collection $property;
+
   
 
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
+        $this->property = new ArrayCollection();
  
     }
 
@@ -268,6 +274,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNon(string $non): self
     {
         $this->non = $non;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Contact>
+     */
+    public function getProperty(): Collection
+    {
+        return $this->property;
+    }
+
+    public function addProperty(Contact $property): self
+    {
+        if (!$this->property->contains($property)) {
+            $this->property->add($property);
+            $property->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProperty(Contact $property): self
+    {
+        if ($this->property->removeElement($property)) {
+            // set the owning side to null (unless already changed)
+            if ($property->getUser() === $this) {
+                $property->setUser(null);
+            }
+        }
 
         return $this;
     }
