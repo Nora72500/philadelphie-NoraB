@@ -1,50 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-		<div class="container-fluid">
-		
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarColor01">
-				<ul class="navbar-nav me-auto">
-					
-					<li class="nav-item">
-						<a class="nav-link active" href="{{ path ("home.index") }}">Accueil</a>
-						
-						<li class="nav-item">
-							<a class="nav-link " href="{{ path ("contact.index") }}">Contact</a>
-						</li>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path ("app_infos") }}">Les Infos</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path ("confession.index") }}">Confession</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path ("presentation.index") }}">Presentation de Nos Pasteurs</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path ("eglise.index") }}">Les différents pôles de l'église</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path ("security.registration") }}">Inscription</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path ("security.login") }}">Connection</a>
-					</li>
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><img src="images/img17.jpg" width=35% alt=""></li><h1>Eglise de Dieu a Verriere Le Buisson</h1>
+    <li class="breadcrumb-item active" aria-current="page"></li>
+  </ol>
+</nav>
 
-					
-					<li class="nav-item">
-						<a class="nav-link" href="{{ path ("app_admin") }}">Admin</a>
-					</li>
-				</ul>
-				
-			</div>
-		</div>
-	</nav>
+<nav class="navbar">
+	
+	<div class="nav-links">
+		<ul>
+			<li class='active'><a href="{{ path ("home.index") }}">Accueil</a></li>
+			<li><a href="{{ path ("contact.index") }}">Contact</a></li>
+			<li><a href="{{ path ("app_infos") }}">Infos</a></li>
+			<li><a href="{{ path ("confession.index") }}">Confession</a></li>
+			<li><a href="{{ path ("presentation.index") }}">Presentation</a></li>
+			<li><a href="{{ path ("eglise.index") }}">Eglise</a></li>
+			<li><a href="{{ path ("security.registration") }}">Inscription</a></li>
+			<li><a href="{{ path ("security.login") }}">Connection</a></li>
+			<li><a href="{{ path ("app_admin") }}">Admin</a></li>
+		</ul>
+	</div>
+	<img src="img/icons8-menu-arrondi-24.png" alt="menu hamburger" class='menu-hamburger'>
+</nav>
+<header></header>
+            <script>
+        const menuHamburger = document.querySelector(".menu-hamburger")
+        const navLinks = document.querySelector(".nav-links")
+ 
+        menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+        })
+</script>
+
+
+
+
+
+
+
