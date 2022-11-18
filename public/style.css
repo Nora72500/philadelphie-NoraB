@@ -1,222 +1,228 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration:none;
-  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
-.slider{
-  height: 50vh;
-  position: relative
+
+.slider {
+    height: 50vh;
+    position: relative
 }
-.slider img{
-  object-fit: cover;
-  height: 50%;
-  width: 50%;
-  position: absolute;
-  
-}
+
+    .slider img {
+        object-fit: cover;
+        height: 50%;
+        width: 50%;
+        position: absolute;
+    }
+
 .box {
-display: flex;
+    display: flex;
 }
 
 #checkbox {
-width: 65px;
-height: 65px;
-cursor: pointer;
--appearance: none;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    -appearance: none;
+    outline: none;
+    background: white;
+    position: relative;
+}
 
-outline: none;
-background: white;
-position: relative;
-}
-#checkbox:hover {
-background: rgba(255, 255, 255, .7);
-}
-  
-#checkbox::before {
-content: '\f1e0';
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-font-family: 'font awesome 5 free';
-font-weight: 700;
-font-size: 1.5rem;
-color: rgb(41, 41, 41);
-transition: all 1.5s;
-}
-#checkbox:checked::before {
-content: '\f00d';
-}
-#checkbox:checked ~ .menu {
-width: 264px; /* 4 * 65 + 4 * 1 pour la bordure */
-}
+    #checkbox:hover {
+        background: rgba(255, 255, 255, .7);
+    }
+
+    #checkbox::before {
+        content: '\f1e0';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'font awesome 5 free';
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: rgb(41, 41, 41);
+        transition: all 1.5s;
+    }
+
+    #checkbox:checked::before {
+        content: '\f00d';
+    }
+
+    #checkbox:checked ~ .menu {
+        width: 264px; /* 4 * 65 + 4 * 1 pour la bordure */
+    }
+
 .menu {
-width: 0;
- display: flex;
-overflow: hidden;
-transition: all .5s;
+    width: 0;
+    display: flex;
+    overflow: hidden;
+    transition: all .5s;
 }
-.menu .menuItems {
-width: 65px;
-height: 65px;
-background: white;
-border-left: 1px solid rgb(165, 165, 165);
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.menu .menuItems:hover {
-background: rgba(255, 255, 255, .7);
-}
-.menu .menuItems i {
-font-size: 1.8rem;
-}
+
+    .menu .menuItems {
+        width: 65px;
+        height: 65px;
+        background: white;
+        border-left: 1px solid rgb(165, 165, 165);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .menu .menuItems:hover {
+            background: rgba(255, 255, 255, .7);
+        }
+
+        .menu .menuItems i {
+            font-size: 1.8rem;
+        }
+
 .fa-whatsapp {
-color: #25d366;
+    color: #25d366;
 }
+
 .fa-instagram {
-color: #c32aa3;
+    color: #c32aa3;
 }
+
 .fa-facebook {
-color: #273c75;
+    color: #273c75;
 }
+
 .fa-twitter {
-color: #1da1f2;
+    color: #1da1f2;
 }
 
-body{
-font-family: 'lato';
-
-
-
+body {
+    font-family: 'lato';
 }
 
-img{
-vertical-align: middle;
-justify-content: center;
-
+img {
+    vertical-align: middle;
+    justify-content: center;
 }
 
-.card{
-  border: 1px solid lightblue;
-  padding: 3px;
-  box-shadow: 2px 2px 2px lightblue;
- 
-
-}
-.card img{
-  width: 100%;
-
-}
-.card .overlay{
-position: absolute;
-top: 0;
-background-color: rgba(0, 0, 0, 0.207);
-color: white;
-font-size: 2.5rem;
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items:center;
-transform: scale(0) rotate(90deg);
-transition: .3s;
-
+.card {
+    border: 1px solid lightblue;
+    padding: 3px;
+    box-shadow: 2px 2px 2px lightblue;
 }
 
-.card:hover .overlay{
-transform: scale(1);
-}
-body{
-font-family: 'poppins';
+    .card img {
+        width: 100%;
+    }
+
+    .card .overlay {
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.207);
+        color: white;
+        font-size: 2.5rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0) rotate(90deg);
+        transition: .3s;
+    }
+
+    .card:hover .overlay {
+        transform: scale(1);
+    }
+
+body {
+    font-family: 'poppins';
 }
 
 
 header {
-height: 100vh;
-width: 100vw;
-background-image: url(img/mount-mont-blanc-covered-in-the-snow-reflecting-on-the-water-in-the-evening-in-chamonix-france.jpg);
-background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(img/mount-mont-blanc-covered-in-the-snow-reflecting-on-the-water-in-the-evening-in-chamonix-france.jpg);
+    background-size: cover;
 }
 
 .navbar {
-position: absolute;
-padding: 50px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 100%;
-box-sizing: border-box;
-
-}
-.navbar a{
-color: white;
+    position: absolute;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.navbar .nav-links ul{
-  display: flex;
-  }
+    .navbar a {
+        color: white;
+    }
 
-.navbar .nav-links ul li{
-margin: 0 25px;
-list-style: none;
-}
-.navbar .nav-links ul li.active a  {
-color: #c32aa3;
-font-weight: 600;
-}
+    .navbar .nav-links ul {
+        display: flex;
+    }
 
-.navbar .menu-hamburger{
-background-color: darkmagenta;
-position: absolute;
-top: 30px;
-right: 50px;
-width:35px ;
-}
+        .navbar .nav-links ul li {
+            margin: 0 25px;
+            list-style: none;
+        }
+
+            .navbar .nav-links ul li.active a {
+                color: #c32aa3;
+                font-weight: 600;
+            }
+
+    .navbar .menu-hamburger {
+        background-color: darkmagenta;
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        width: 35px;
+    }
 
 
 @media screen and (max-width: 900px) {
-  .navbar{
-    padding: 0;
-  }
+    .navbar {
+        padding: 0;
+    }
 
-  .navbar .menu-hamburger{
-  display: block;
-  top: 30px;
-  background-color: darkmagenta;
- }
+        .navbar .menu-hamburger {
+            display: block;
+            top: 30px;
+            background-color: darkmagenta;
+        }
 
- .nav-links{
-  top: 0;
-  left: 0;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.20);
-  backdrop-filter: blur(7px);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: -100%;
-  transition: all 0.5s ease;
- }
+    .nav-links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.20);
+        backdrop-filter: blur(7px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
 
- .nav-links.mobile-menu{
-  margin-left: 0;
+        .nav-links.mobile-menu {
+            margin-left: 0;
+        }
 
-}
 
+        .nav-links ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
- .nav-links ul{
- display: flex;
- flex-direction: column;
- align-items: center;
- }
- .navbar .nav-links ul li{
-  margin: 25px 0;
-  font-size: 1.2em;
- }
-
+    .navbar .nav-links ul li {
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
 }
